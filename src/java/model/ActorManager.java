@@ -34,7 +34,7 @@ public class ActorManager {
         List<Actor> emps = new ArrayList<Actor>();
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from actor limit 50");
+            ResultSet rs = statement.executeQuery("select * from actor order by actor_id desc limit 50");
             while (rs.next()) {
                 Actor user = new Actor();
                 user.setFirstName(rs.getString("first_name"));
